@@ -38,6 +38,7 @@ import org.openqa.selenium.support.PageFactory;
             String password = ConfigurationReader.get("librarian_password");
             usernameInput.sendKeys(username);
             passwordInput.sendKeys(password);
+            System.out.println("will be deleted");
             loginBtn.click();
         }
 
