@@ -1,5 +1,5 @@
 package com.cybertek.pages;
 
-public class AddBook {
+public class AddBookPage {
 
 }
