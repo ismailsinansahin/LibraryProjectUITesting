@@ -16,7 +16,7 @@ public class Hooks {
     @Before
     public void setUp(){
         Driver.get().manage().window().maximize();
-        Driver.get().manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
+        Driver.get().manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
     }
 
     @After
