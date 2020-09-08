@@ -1,6 +1,7 @@
 package com.cybertek.step_definitions;
 
 import com.cybertek.utilities.BrowserUtils;
+import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.DBUtils;
 import com.cybertek.utilities.Driver;
 import io.cucumber.java.After;
@@ -17,6 +18,7 @@ public class Hooks {
     public void setUp(){
         Driver.get().manage().window().maximize();
         Driver.get().manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
+        Driver.get().get(ConfigurationReader.get("url"));
     }
 
     @After
@@ -42,4 +44,5 @@ public class Hooks {
         System.out.println("\tdisconnecting from Database...");
         DBUtils.destroy();
     }
+
 }
