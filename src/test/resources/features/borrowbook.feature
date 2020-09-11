@@ -2,7 +2,7 @@
   Feature: Students borrow available books
     Description: The purpose of this feature is to test the borrow functionality
 
-    @borrow @ELE-52 @ELE-54 @ELE-33 @ELE-53
+    @borrow @ELE-53
     Scenario: Verify students should be able to borrow
       Given the user enter valid student credentials "student24@library" "ya2nTtvY"
       And the user navigate to Books module
