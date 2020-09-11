@@ -1,4 +1,4 @@
-@halim
+@halim @smoke
   Feature: Students borrow available books
     Description: The purpose of this feature is to test the borrow functionality
     @borrow
