@@ -99,10 +99,10 @@ public class EditBooksStepDefs {
 
     @Then("The updated information should be correctly reflected on the table")
     public void the_updated_information_should_be_correctly_reflected_on_the_table(List<String> entries) throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         booksPage.searchBox.click();
         booksPage.searchBox.sendKeys(entries.get(1));
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         boolean flag = false;
         for(int i = 1;i<booksPage.rows.size();i++){
