@@ -1,4 +1,4 @@
-@ELE-78
+
 Feature: 
 
 	#A librarian should be able to edit books
