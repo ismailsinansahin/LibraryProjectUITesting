@@ -63,6 +63,7 @@ Feature: Only librarians should be able to add books
       And the user navigate to Books module
       And the user click on Add Book button
       And fill the necessary input boxes with valid inputs "A Book Name" "2020" "<ISBN>"
+      And the user click on Save Changes
       Then "<Expected Message>" message should be displayed
       Examples:
         | ISBN           | Expected Message           |

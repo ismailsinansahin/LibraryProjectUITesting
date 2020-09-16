@@ -53,4 +53,7 @@ public class AddBookPage {
     @FindBy(id = "book_group_id")
     public List<WebElement> bookCategories;
 
+    @FindBy(xpath = "//div[@class='toast-message']")
+    public WebElement createdMessage;
+
 }
