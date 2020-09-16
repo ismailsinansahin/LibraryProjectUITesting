@@ -1,5 +1,5 @@
 @ELE-78
-Feature:
+Feature: librarian should be able to edit books
 
 	#A librarian should be able to edit books
   @ELE-47 @ELE-77 @ELE-33

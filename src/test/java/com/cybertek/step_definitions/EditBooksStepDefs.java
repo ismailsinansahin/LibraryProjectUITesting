@@ -41,7 +41,7 @@ public class EditBooksStepDefs {
     public void the_name_should_be_updated_to(String name) throws InterruptedException {
         Thread.sleep(1000);
         booksPage.searchBox.sendKeys(name);
-
+        Thread.sleep(1000);
         String updatedName = booksPage.firstRowNameCell.getText();
         Assert.assertEquals("Name is not updated properly",name,updatedName);
     }
