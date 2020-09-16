@@ -1,9 +1,8 @@
-@addBook
-
+@addBook @ELE-44
 Feature: Only librarians should be able to add books
   Description: The purpose of this feature is to test the add book functionality
 
-  @addBookWithLibrarian
+  @addBookWithLibrarian @ELE-38 @ELE-43 @ELE-33
   Scenario: Librarian users should be able to add books
     When the user enter valid librarian credentials "librarian21@library" "aZ849tSZ"
     And the user navigate to Books module
@@ -12,13 +11,13 @@ Feature: Only librarians should be able to add books
     And the user click on Save Changes
     Then "The book has been created." message should be displayed
 
-  @addBookWithStudent
+  @addBookWithStudent @ELE-39 @ELE-43 @ELE-33
   Scenario: Student users should NOT be able to add books
     When the user enter valid student credentials "student24@library" "ya2nTtvY"
     And the user navigate to Books module
     Then Add Book button should NOT be seen on the page
 
-  @verifyBookParameters
+  @verifyBookParameters @ELE-40 @ELE-43 @ELE-33
   Scenario: Verify the book parameters in the Add Book Page
     When the user enter valid librarian credentials "librarian21@library" "aZ849tSZ"
     And the user navigate to Books module
@@ -31,7 +30,7 @@ Feature: Only librarians should be able to add books
       | Book Category |
       | Description   |
 
-  @verifyBookCategories
+  @verifyBookCategories @ELE-41 @ELE-43 @ELE-33
   Scenario: Verify the book categories in the Add Book Page
     When the user enter valid librarian credentials "librarian21@library" "aZ849tSZ"
     And the user navigate to Books module
@@ -58,7 +57,7 @@ Feature: Only librarians should be able to add books
       | Memoir                  |
       | Poetry                  |
 
-    @verifyISBNRestrictions
+    @verifyISBNRestrictions @ELE-42 @ELE-43 @ELE-33
     Scenario Outline: ISBN numbers should be 10 or 13 digits in length and consists of digits (0-9) and dashes (-)
       When the user enter valid librarian credentials "librarian21@library" "aZ849tSZ"
       And the user navigate to Books module
