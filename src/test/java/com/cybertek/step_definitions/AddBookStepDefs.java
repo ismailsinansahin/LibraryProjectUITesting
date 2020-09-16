@@ -49,11 +49,7 @@ public class AddBookStepDefs {
     @Then("{string} message should be displayed")
     public void message_should_be_displayed(String expectedMessage) {
         String actualMessage = "The book has been created.";
-        if (expectedMessage.equals("The book has been created.")){
-            Assert.assertEquals(expectedMessage,actualMessage);
-        }else{
-            Assert.assertFalse(false);
-        }
+        Assert.assertEquals(expectedMessage,actualMessage);
     }
 
     @Then("Add Book button should NOT be seen on the page")
