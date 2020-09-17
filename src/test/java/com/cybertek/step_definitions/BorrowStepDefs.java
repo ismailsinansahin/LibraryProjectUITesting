@@ -8,7 +8,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 
 public class BorrowStepDefs {
     DashboardPage dashboardPage = new DashboardPage();
@@ -19,14 +18,12 @@ public class BorrowStepDefs {
             dashboardPage.nextBtn.click();
         }else {
             dashboardPage.borrowBookBtn.getText();
-            System.out.println("dashboardPage.borrowBookBtn.getText() = " + dashboardPage.borrowBookBtn.getText());
             BrowserUtils.clickWithJS(dashboardPage.borrowBookBtn);
         }
     }
 
     @Then("verify that {string} message is displayed")
     public void verify_that_message_is_displayed(String message) {
-        //System.out.println(" message txt = " + dashboardPage.borrowMessage.getText());
         String expectedMessage = "The book has been borrowed...";
         BrowserUtils.verifyElementDisplayed(dashboardPage.displayMessage);
         Assert.assertEquals("Correct message is successfully displayed",expectedMessage,dashboardPage.displayMessage.getText());
@@ -39,7 +36,6 @@ public class BorrowStepDefs {
     @When("the user click on {string}")
     public void the_user_click_on(String returnBook) {
         int size = dashboardPage.returnBookBtn.size();
-        //System.out.println("size = " + size);
         dashboardPage.returnBookBtn.get(size-1).click();
     }
 
