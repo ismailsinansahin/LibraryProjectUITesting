@@ -19,6 +19,8 @@ public class Driver {
     // for each thread, in InheritableThreadLocal we can have separate object for that thread
     // driver class will provide separate webdriver object per thread
     private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
+    private static final String GRID_URL = "http://34.232.65.118:4444/wd/hub";
+    
     public static WebDriver get() {
         //if this thread doesn't have driver - create it and add to pool
         if (driverPool.get() == null) {
@@ -33,6 +35,14 @@ public class Driver {
                 case "chrome-headless":
                     WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver(new ChromeOptions().setHeadless(true)));
+                    break;
+                case "remote-chrome":
+                    try {
+                        ChromeOptions chromeOptions = new ChromeOptions();
+                        driverPool.set(new RemoteWebDriver(new URL(GRID_URL), chromeOptions));
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
